@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form action="db.php" method="POST">
+    <div class="Signup">
+        <h1>SIGN UP</h1>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" required>
+        
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required>
+        
+        <label for="number">Number</label>
+        <input type="tel" id="number" name="number" required>
+        
+        <label for="pass">Password</label>
+        <input type="password" id="pass" name="pass" required>
+        
+        <input type="submit" name="submit" value="SUBMIT">
+    
+</form>
+    <p>Already have an account? <a href="login.php">Login Here</a></p>
+      <p><a href="home.php">Home</a></p>
+      </div>
+</body>
+</html>

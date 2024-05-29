@@ -1,0 +1,187 @@
+body{
+
+    background: url(2.png);
+    width: 140%;
+    height: 50vh;
+
+   
+    background-color: rgb(160, 161, 175);
+     
+}
+
+.topnav {
+    background-color: #d1caca;
+    overflow: hidden;
+  }
+  
+ 
+  .topnav a {
+    float: left;
+    color: #0e0606;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+ 
+
+.Signup{
+    
+    
+    width: 500px;
+    height: 800px;
+    text-align: initial;
+    font-style: bold;
+    margin:auto;
+    border-radius: 3px;
+
+}
+.Signup h1{
+    text-align: center; 
+}
+.Signup p{
+
+    text-align: center;
+}
+
+
+
+
+
+.Signup input
+{
+
+    width:100%;
+    padding: 10px; 
+    color: black;
+     border:none;
+    border:1px solid black;
+    border-radius: 6px;
+    outline: none;
+    
+}
+.Signup level{
+   font-style: bold;
+   padding:5%;
+}
+
+input [type = "submit"]
+{ 
+
+width: 100px;
+height: 35px; 
+
+border: none ;
+
+
+color: black;
+font-size : 25px ;
+cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    text-align: center;
+   
+    padding: 10px;
+     
+    color:rgb(177, 157, 157) ;
+     background: rgb(28, 128, 50);
+}
+
+
+.login{
+
+   
+    width: 500px;
+    height: 800px;
+    text-align: initial;
+    font-style: bold;
+    margin:auto;
+    border-radius: 3px;
+
+}
+.login h1{
+    text-align: center;
+}
+.login p{
+    text-align: center;
+}
+.login input
+{
+
+    width:100%;
+    padding: 10px; 
+    color: black;
+     border:none;
+    border:1px solid black;
+    border-radius: 6px;
+    outline: none;
+    
+}
+
+.Home {
+
+   
+    
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 1px;
+    
+
+}
+.a p{
+
+    text-align: center;
+    font-style: italic;
+    color: black;
+    font-style: bold;
+    font-size: 20px;
+
+  }
+  .h1 h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    font-style: normal;
+    color: black;
+    font-style: bold;
+  }
+.top p{
+    text-align: center;
+    font-style: italic;
+    font-style: bold ;
+    color: black;
+    font-size: 30px;
+}
+ 
+
+.btn{
+   position: middle;
+}
+
+.about p
+{
+  
+
+   padding:0px;
+    font-size: 20px;
+   
+    font-style: bold;
+}
+.about a{
+    color:black 
+}
+
