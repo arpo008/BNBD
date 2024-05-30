@@ -21,7 +21,10 @@ else{
           $data= $stmt_result ->fetch_assoc();
           if($data ['pass'] === $Password)
           {
-            header("Location: dashboard.php");
+             echo '<script> 
+            alert("Successfully LOG IN");
+            window.location.href = "dashboard.php";
+            </script>';
           }
           else{
             echo '<script>alert("Invalid Email or Password")</script>';
@@ -34,6 +37,7 @@ else{
 }
 
 ?>
+
 
 
 
