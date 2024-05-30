@@ -5,24 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-
     <div class="login">
-        <h1> LOG IN </h1>
-        <p> Please enter your valid email and password</p>
-        <from>
-        <lebel> email </lebel>
-        <input type="email" name=" email" required>
-        
-        <lebel> Password</lebel>
-        <input type="password" name=" password " required>
-       
-        <input type ="submit" name=" submit " value="Log In">
-    </from>
-<p>Not have an account? Click <a  href="Signup.php"> Sign Up Here </a></p> <p><a href="Home.php"> Home </a> </p>
+        <h1>LOG IN</h1>
+        <p>Please enter your valid email and password</p>
+        <form action="login db.php" method="post">
+            <label>Email</label>
+            <input type="email" name="email" required>
+            <label>Password</label>
+            <input type="password" name="password" required>
+            <input type="submit" name=" " value="Log In">
+        </form>
+        <p>Not have an account? Click <a href="Signup.php">Sign Up Here</a></p>
+        <p><a href="Home.php">Home</a></p>
     </div>
-    
 </body>
 </html>
