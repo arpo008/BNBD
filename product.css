@@ -1,9 +1,22 @@
 .main{
+   
+
     background-color: rosybrown;
     margin-top: 10px;
-    max-width: auto;
+    max-width: 1500px;
 }
 input{
 
     margin-top: 10px;
+    
+}
+
+.body{
+    background-color: silver;
+}
+
+.container{
+
+ 
+    margin-top: 70px;
 }
