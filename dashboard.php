@@ -74,7 +74,7 @@
           <button class="btn btn-outline-light"><a href="#" style="text-decoration:none;color:white;">
           <div class="card bg-success p-5 m-2 pb-5" style="width: 22rem;">
             <div class="card-inner">
-              <h3>CUSTOMERS</h3>
+              <h3>ORDER STATUS</h3>
               <span class="material-icons-outlined">groups</span>
             </div>
           </div></a></button>
