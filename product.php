@@ -27,6 +27,8 @@
 </div>
 </center>
 
+<div class="container">
+
 <table class="table">
   <thead>
     <tr>
@@ -52,8 +54,9 @@
                         <td>{$row['id']}</td>
                         <td>{$row['Name']}</td>
                         <td>{$row['Price']}</td>
-                        <td><img src='{$row['img']}' width='200px' height='70px'></td>
-                        <td><a href='delete.php?id={$row['id']}' class='btn btn-danger'>Delete</a></td>
+                        <td><img src='{$row['img']}' width='100px' height='70px'></td>
+                        <td><a href='delete.php? id={$row['id']}' class='btn btn-danger'>Delete</a></td>
+                        <td><a href='update.php? id={$row['id']}' class='btn btn-danger'>Update</a></td>
                         
                     </tr>
                     ";
@@ -64,5 +67,7 @@
    
 </tbody>
      </table>
+           </div>
+           <a  href="admindashboard.php" > Back </a>
             </body>
                    </html>

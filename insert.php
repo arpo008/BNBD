@@ -19,7 +19,7 @@ if (isset($_POST['upload'])) {
         
        
         if (mysqli_query($con, $sql)) {
-            echo "Data successfully inserted into the database.";
+           header('location: product.php');
         } else {
             echo "Error inserting data: " . mysqli_error($con);
         }
@@ -28,3 +28,4 @@ if (isset($_POST['upload'])) {
     }
 }
 ?>
+
