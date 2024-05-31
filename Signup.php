@@ -31,7 +31,7 @@
         <label for="pass">Password</label>
         <input type="password" id="pass" name="pass" required>
         
-        <input type="submit" name="submit" value="SUBMIT">
+        <input type="submit" name="submit" class="p-1 mt-3 mb-2" value="SUBMIT">
     
 </form>
     <p>Already have an account? <a href="login.php">Login Here</a></p>
