@@ -1,0 +1,311 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+header{
+    background-color: #05190A; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+     background-color:rgba(0,0,0,.5); 
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    display: block;
+    list-style-type: disc;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+header .navigation ul{
+    float: right;
+    margin-right: 20px;
+}
+header .navigation ul li{
+    display: inline-block;
+    line-height: 50px;
+    margin: 0;
+}
+header .navigation ul li a{
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+header .navigation ul li a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    transform-origin: 50% 50%;
+    transform: scaleX(0);
+    transition: transform .5s;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    background: linear-gradient(to right,#fff,#f3f3f3);
+}
+header .navigation ul li a:hover::after{
+    transform-origin: right;
+    transform: scaleX(1);
+}
+
+header .navigation ul li .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius:6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+}
+header .navigation ul li .btnLogin-popup:hover{
+    background-color: black;
+    color: #fff;
+}
+ul li.active, ul li a:hover{
+    background: #051904;
+    transition: .5s;
+}
+
+.check_btn{
+    font-size: 25px;
+    color: white;
+    float: left;
+    line-height: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media(max-width:858px){
+    .check_btn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 50%;
+        height: 70vh;
+        background: #2c5038;
+        top: 100px;
+        left: -100%;
+        text-align: left;
+        transition: all .5s;
+        border-radius: 6px;
+        box-shadow: 0 0 30px rgba(0,0,0,.5);
+    }
+    header .navigation ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    header .navigation ul li a {
+        font-size: 20px;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
+}
+
+.logo{
+    color: white;
+    user-select: none;
+    font-size: 25px;
+    line-height: 50px;
+    padding: 0 10px;
+    font-family: 'poppins',sans-serif;
+    font-weight: bold;
+}   
+.cover_box {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    background: transparent;
+    border:  2px solid #c9c8c8;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*transform: scale(0); */ 
+    /* overflow: hidden;*/ 
+    transition: transform .5s ease, height .2s ease, border-color .5s ease;
+}
+.cover_box:hover{
+    border-color: #fff;
+    animation: border-glow is infinite alternate;
+}
+@keyframes border-glow{
+    from{
+        border-color: #f6f8f6;
+        box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    }
+    to{
+        border-color: #ffffff;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+    
+}
+.cover_box.active-popup{
+    transform:scale(1);
+}
+.cover_box.active{
+    height: 520px;
+    padding: 40px;
+}
+.cover_box .form-box.login{
+    transition: transform .50s ease;
+    transform: translateX(0);
+}
+.cover_box.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+.cover_box .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.cover_box.active .form-box.register{
+    transition: transform .50s ease;
+    transform: translateX(0);
+}
+.cover_box .icon-close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background:#05190A;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 1;
+}
+.form-box h2{
+    font-size: 2em;
+    color: #051904;
+    text-align: center;
+}
+.input-box{
+    position:relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 500;
+    color: #05190A;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top:-10px;
+}
+.input-box input{
+    width:100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #05190A;
+    border-radius: 10px;
+    outline: none;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #05190A;
+    line-height: 57px;
+}
+.remember-forget{
+   font-size: 10px;
+    color: #05190A;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-forget label input{
+    accent-color: #05190A;
+    margin-right: 3px;
+
+}
+.remember-forget a{
+    color:#05190A;
+    text-decoration: underline;
+}
+.btn{
+    width:100%;
+    height: 30px;
+    background-color:#05190A;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+.login-register{
+    .login-register{
+        font-size: .9em;
+        color: #c9c8c8;
+        text-align: center;
+        font-weight: 500;
+        margin: 25px 0 10px;
+    }
+}
+.login-register p a {
+    color: #9a9a9a;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-register p a :hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
