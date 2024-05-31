@@ -138,6 +138,9 @@ body {
 .card-inner > .material-icons-outlined {
   font-size: 45px;
 }
+.remove_underline{
+  text-decoration: none;
+}
 /* ---------- MEDIA QUERIES ---------- */
 
 /* Medium <= 992px */
