@@ -11,6 +11,7 @@
         <a href="Signup.php">  Sign Up  </a>
         <a href="login.php"> Login </a>
         <a href="about.php">  About  </a>
+        <a href="admin.php"> Admin </a>
       </div>
    
         <div class="top">
