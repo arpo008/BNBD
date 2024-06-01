@@ -1,14 +1,11 @@
 <?php
 $con = mysqli_connect("localhost", "root", "", "bnbd");
 
-// Check for a POST request to delete an item
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
     $product_id = $_POST['product_id'];
     
-    // Validate and sanitize the input
     $product_id = mysqli_real_escape_string($con, $product_id);
 
-    // SQL to delete a record
     $sql = "DELETE FROM order_status WHERE Product_id = '$product_id'";
     if(mysqli_query($con,$sql)){
         header('location:order status.php');
