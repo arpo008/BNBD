@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+if(!isset($_SESSION['cid'])){
+  echo '<script>
+  alert("You must log in first");
+  window.location.href="login.php";
+  </script>';
+  exit();
+}
+$cid=$_SESSION['cid'];
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

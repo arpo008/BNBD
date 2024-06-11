@@ -2,7 +2,7 @@
 $con = mysqli_connect('localhost', 'root', '', 'bnbd');
 
 if (isset($_POST['upload'])) {
-    $ID=$_POST['id'];
+    $ID=$_POST['pid'];
     $Name = $_POST['name'];
     $Price = $_POST['price'];
     $Image = $_FILES['img'];
@@ -14,8 +14,7 @@ if (isset($_POST['upload'])) {
     $img_des = "uploadimg/" . $img_name;
 
        if (move_uploaded_file($img_loc, $img_des)) {
-        // Prepare the SQL statement
-        $sql = "INSERT INTO product (id, `Name`, Price, `img`) VALUES ('$ID','$Name', '$Price', '$img_des')";
+        $sql = "INSERT INTO product VALUES ('$ID','$Name', '$Price', '$img_des')";
         
        
         if (mysqli_query($con, $sql)) {

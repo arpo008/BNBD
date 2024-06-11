@@ -12,14 +12,14 @@
     <center>
         <div class="main">
   <form action="insert.php" method="POST" enctype="multipart/form-data">
-  <label for="">ID: </label>
-    <input type="text" name="id"><br>
-    <label for=""> Name: </label>
+  <label>ID: </label>
+    <input type="text" name="pid"><br>
+    <label> Name: </label>
     <input type="text" name="name"><br>
-    <label for=""> Price : </label>
+    <label> Price : </label>
     <input type="text" name="price" id=""><br>
-    <label for=""> Image: </label>
-    <input type="file" name="img" id=""><br>
+    <label> Image: </label>
+    <input type="file" name="img"><br>
 
     <button name="upload"> UPLOAD </button>
 
@@ -36,8 +36,8 @@
       <th scope="col"> Product Name </th>
       <th scope="col">  Price  </th>
       <th scope="col"> Image </th>
-      <th scope="col"> Delete </th>
-      <th scope="col"> Update </th>
+      <th></th>
+      <th ></th>
      
     </tr>
   </thead>
@@ -51,12 +51,12 @@
                 {
                     echo "
                     <tr>
-                        <td>{$row['id']}</td>
+                        <td>{$row['pid']}</td>
                         <td>{$row['Name']}</td>
                         <td>{$row['Price']}</td>
                         <td><img src='{$row['img']}' width='100px' height='70px'></td>
-                        <td><a href='delete.php? id={$row['id']}' class='btn btn-danger'>Delete</a></td>
-                        <td><a href='update.php? id={$row['id']}' class='btn btn-danger'>Update</a></td>
+                        <td><a href='delete.php? id={$row['pid']}' class='btn btn-danger'>Delete</a></td>
+                        <td><a href='update.php? id={$row['pid']}' class='btn btn-danger'>Update</a></td>
                         
                     </tr>
                     ";

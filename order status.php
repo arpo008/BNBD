@@ -1,4 +1,17 @@
 <?php
+session_start();
+if (!isset($_SESSION['cid'])) {
+    echo '<script>
+    alert("You must log in first");
+    window.location.href = "login.php";
+    </script>';
+    exit();
+}
+
+    $cid = $_SESSION['cid'];
+
+
+
 $con = mysqli_connect("localhost", "root", "", "bnbd");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
@@ -12,6 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
     }
 }
     ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
                         <th>Expected Delivery Date</th>
                         <th>Order Status</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,14 +65,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
                         <td>{$row['Order_Date']}</td>
                         <td>{$row['Expected_Delivery_Date']}</td>
                         <td>{$row['Order_Status']}</td>
-                        <td>
 
+                        <td><a href='order detail.php'>Order Details</a></td>
+
+                        <td>
+                    
                         <form method='post'>
                         <input type='hidden' name='product_id' value='{$row['Product_id']}'>
                         <button type='submit' class='btn btn-danger btn-sm'>Cancel</button>
                        </form>
 
                         </td>
+
                         </tr>";
                     }
                     ?>

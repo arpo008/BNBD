@@ -2,7 +2,7 @@
  $con = mysqli_connect('localhost', 'root', '', 'bnbd');
 
  if (isset($_POST['update'])) {
-    $ID= $_POST['id'];
+    $ID= $_POST['pid'];
     $Name = $_POST['name'];
     $Price = $_POST['price'];
     $Image = $_FILES['img'];
