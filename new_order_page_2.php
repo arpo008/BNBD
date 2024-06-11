@@ -175,7 +175,7 @@ function togglecart(button, pid,qua_id,price) {
             localStorage.removeItem('item');
         sendinfo();
 
-        window.location.href = "dashboard.php";
+        window.location.href = "customer_to_sql.php";
         }
 
 </script>

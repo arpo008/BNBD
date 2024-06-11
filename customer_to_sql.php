@@ -48,7 +48,6 @@ $newdate = $date->format("d/m/Y");
          echo "Error inserting data: " . mysqli_error($con);
      }
      }   
-     
     
      if (mysqli_query($con, $sql)) {
         //header('location: product.php');
@@ -56,5 +55,13 @@ $newdate = $date->format("d/m/Y");
      } else {
          echo "Error inserting data: " . mysqli_error($con);
      }
-
+     //order processing, Shipping , Delivered
+     $order_status="Order Processing";
+     $sql3="INSERT INTO order_history VALUES ('$oid','$order_status')";
+     if (mysqli_query($con, $sql3)) {
+        //header('location: product.php');
+        echo "<br>Data added in orders_history <br>";
+     } else {
+         echo "Error inserting data: " . mysqli_error($con);
+     }
 ?>
