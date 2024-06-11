@@ -75,7 +75,7 @@ function sendinfo() {
 
     document.querySelectorAll('.toadd').forEach(button => {
         let a=button.getAttribute('onclick');
-        console.log(a);             1 
+        console.log(a);
 
         const pid =  button.getAttribute('onclick').match(/toggleCart\(this, "(.+?)"\)/)[1];
 

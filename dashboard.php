@@ -80,7 +80,7 @@ $cid=$_SESSION['cid'];
 
         <div class="main-cards ali d-flex justify-content-around ">
  
-          <button class="btn btn-outline-light"><a href="#" style="text-decoration:none;color:white;">
+          <button class="btn btn-outline-light"><a href="new_order_page_1.php" style="text-decoration:none;color:white;">
           <div class="card bg-warning p-5 m-2" style="width: 22rem;">
             <div class="card-inner">
               <h3>NEW ORDER</h3>

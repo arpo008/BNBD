@@ -1,4 +1,17 @@
 
+<?php
+ session_start();
+   if(isset($_SESSION['arr'])){
+       $ar=$_SESSION['arr'];
+   }
+   else{
+     echo " No Data Entry";
+     exit;
+   }   
+   $ar = json_decode($ar[0]);
+   foreach($ar as $sum)
+   echo $sum." ";
+?>
 <script>
 function increment(id,price) {
     let input = document.getElementById(id);
@@ -125,6 +138,46 @@ function togglecart(button, pid,qua_id,price) {
       console.log("From togglecart");
 
         }
+     
+        function sendinfo() {
+    let items = localStorage.getItem('items');
+    fetch("customer_to_sql.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json;charset=utf-8"
+        },
+        body: JSON.stringify({ items })
+    }).catch(error => console.error("Error:", error));
+}
+
+
+        function sendinfo() {
+            let items = localStorage.getItem('items');
+            console.log(items);
+            fetch("pera2.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json;charset=utf-8"
+                },
+                "body": JSON.stringify({ items })
+            })
+            .then(function (response){
+                return response.text();
+                })
+             .then(function (data){
+                console.log(data); 
+            } )
+            .catch(error => console.error("Error:", error));
+        }
+
+        function callotherfunction(){
+            if(localStorage.getItem('item')!=null)
+            localStorage.removeItem('item');
+        sendinfo();
+
+        window.location.href = "dashboard.php";
+        }
+
 </script>
 
 
@@ -158,7 +211,8 @@ function togglecart(button, pid,qua_id,price) {
   <tbody>
        
   <?php
-  session_start();
+  
+ /* session_start();
    if(isset($_SESSION['arr'])){
        $ar=$_SESSION['arr'];
    }
@@ -169,10 +223,7 @@ function togglecart(button, pid,qua_id,price) {
     
    $ar = json_decode($ar[0]);
    foreach($ar as $sum)
-   echo $sum." ";
-
-
-
+   echo $sum." ";*/
 
    $con = mysqli_connect('localhost', 'root', '', 'bnbd'); 
    $data=mysqli_query($con , "SELECT * FROM product");
@@ -204,9 +255,12 @@ function togglecart(button, pid,qua_id,price) {
                     }
               
                 }
-
-
 ?>
-
+</tbody>
+            </table>
+            <div class="d-grid">
+       <button type="button" class="btn btn-primary btn-block" onclick="callotherfunction()">Confirm</button>
+   </div>
+            </div>
 </body>
 </html>
