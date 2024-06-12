@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-$Email= $_POST['email'];
-$Password= $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $Email= $_POST['email'];
+    $Password= $_POST['password'];
 
 $con = new mysqli('localhost', 'root', '','bnbd' );
 
@@ -36,6 +37,8 @@ else{
     {
         echo "<h2> Invalid Email or pass </h2>";
     }
+}
+
 }
 
 ?>

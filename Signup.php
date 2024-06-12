@@ -1,5 +1,6 @@
 <?php
-$con=mysqli_connect("localhost","root","","bnbd");
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $con=mysqli_connect("localhost","root","","bnbd");
 
 if(!$con)
 die("Connection Failed: ".mysqli_connect_error());
@@ -27,7 +28,7 @@ if (isset($_POST['submit'])) {
    $sql="INSERT INTO customer (cid,name, email, Age, address, number, pass) VALUES ('$lcid','$Name', '$Email', '$Age', '$Address', '$Number', '$Password')" ;
     if (mysqli_query($con, $sql)) {
         
-        header("location: Signup.php");
+        header("location: login.php");
 
         echo"<script>alert('Successful')</script>";
          
@@ -36,6 +37,9 @@ if (isset($_POST['submit'])) {
     }
     mysqli_close($con);
 }
+
+}
+
 
 
 ?>

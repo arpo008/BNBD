@@ -139,7 +139,7 @@ function togglecart(button, pid,qua_id,price) {
 
         }
      
-        function sendinfo() {
+       /* function sendinfo() {
     let items = localStorage.getItem('items');
     fetch("customer_to_sql.php", {
         method: "POST",
@@ -148,7 +148,7 @@ function togglecart(button, pid,qua_id,price) {
         },
         body: JSON.stringify({ items })
     }).catch(error => console.error("Error:", error));
-}
+}*/
 
 
         function sendinfo() {
@@ -171,12 +171,33 @@ function togglecart(button, pid,qua_id,price) {
         }
 
         function callotherfunction(){
+          if(localStorage.getItem('items')!=null)
+          {
             if(localStorage.getItem('item')!=null)
             localStorage.removeItem('item');
-        sendinfo();
+           sendinfo();
 
         window.location.href = "customer_to_sql.php";
+          }
+          else{
+            alert("Please Order something");
+            window.location.href = "new_order_page_2.php";
+          }
+
+
         }
+
+        function whatever(){
+  
+    window.location.href="login.php";
+    if(localStorage.getItem('item') != null) {
+        localStorage.removeItem('item');
+    }
+
+    if(localStorage.getItem('items') != null) {
+        localStorage.removeItem('items');
+    }
+  }
 
 </script>
 
@@ -190,8 +211,17 @@ function togglecart(button, pid,qua_id,price) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
     <title>new order page 2.php</title>
+
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Bnbd</a>
+    </div>
+    <button class="btn btn-danger navbar-btn" onclick="whatever()">Logout</button>
+  </div>
+</nav>
 <div class="container">
 
 <table class="table">
@@ -212,19 +242,6 @@ function togglecart(button, pid,qua_id,price) {
        
   <?php
   
- /* session_start();
-   if(isset($_SESSION['arr'])){
-       $ar=$_SESSION['arr'];
-   }
-   else{
-     echo " No Data Entry";
-     exit;
-   }
-    
-   $ar = json_decode($ar[0]);
-   foreach($ar as $sum)
-   echo $sum." ";*/
-
    $con = mysqli_connect('localhost', 'root', '', 'bnbd'); 
    $data=mysqli_query($con , "SELECT * FROM product");
 

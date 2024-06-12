@@ -11,6 +11,18 @@ if(!isset($_SESSION['cid'])){
 $cid=$_SESSION['cid'];
 
 ?>
+<script>
+  function whatever(){
+    window.location.href="login.php";
+    if(localStorage.getItem('item') != null) {
+        localStorage.removeItem('item');
+    }
+
+    if(localStorage.getItem('items') != null) {
+        localStorage.removeItem('items');
+    }
+  }
+</script>
 
 
 
@@ -31,9 +43,21 @@ $cid=$_SESSION['cid'];
     <link rel="stylesheet" href="22.css">
   </head>
   <body>
+
+
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Bnbd</a>
+    </div>
+    <button class="btn btn-danger navbar-btn" onclick="whatever()">Logout</button>
+  </div>
+</nav>
+
+
     <div class="grid-container">
       <!-- Sidebar -->
-      <aside id="sidebar">
+      <!--<aside id="sidebar">
         <div class="sidebar-title">
           <div class="sidebar-brand">
             <span class="material-icons-outlined">shopping_cart</span> STORE
@@ -69,7 +93,7 @@ $cid=$_SESSION['cid'];
           </li>
           
         </ul>
-      </aside>
+      </aside>-->
       <!-- End Sidebar -->
 
       <!-- Main -->

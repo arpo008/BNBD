@@ -18,6 +18,18 @@ function sendinfo() {
             .catch(error => console.error("Error:", error));
 
         }
+
+        function whatever(){
+         
+        if(localStorage.getItem('item') != null) {
+        localStorage.removeItem('item');
+    }
+
+    if(localStorage.getItem('items') != null) {
+        localStorage.removeItem('items');
+    }
+    window.location.href="login.php";
+  }
         </script>
 
 <!DOCTYPE html>
@@ -33,9 +45,26 @@ function sendinfo() {
             object-fit: cover;
         }
 
+        body {
+  margin: 0;
+  padding: 0;
+  background-color: #1d2634;
+  color: #9e9ea4;
+  font-family: 'Montserrat', sans-serif;
+}
+
     </style>
 </head>
 <body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Bnbd</a>
+    </div>
+    <button class="btn btn-danger navbar-btn" onclick="whatever()">Logout</button>
+  </div>
+</nav>
     
     <div class='container'>
         <div class='row g-3'>

@@ -18,7 +18,7 @@
 <?php
   $con = mysqli_connect('localhost', 'root', '', 'bnbd');
   $ID= $_GET['id'];
-  $Rec= mysqli_query($con , "SELECT * FROM product WHERE id = $ID");
+  $Rec= mysqli_query($con , "SELECT * FROM product WHERE pid = $ID");
   $data= mysqli_fetch_array($Rec);
 ?>
 
@@ -31,7 +31,7 @@
             <input type="text" value="<?php echo $data['Price']?>" name="price" id=""><br>
             <label for=""> Image: </label>
             <input type="file" name="img"><img src="<?php echo $data['img']?>" width='200px' height='70px'><br>
-            <input type="hidden" name="id" value="<?php echo $data['id']?>">
+            <input type="hidden" name="pid" value="<?php echo $data['pid']?>">
             <button type="submit" name="update" class='btn btn-danger m-2'> Update </button>
         </form>
     </div>
